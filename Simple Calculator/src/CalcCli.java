@@ -12,44 +12,25 @@ import java.util.Scanner;
  * 
  */
 public class CalcCli {
-   private static final String
-         OP_ADD = "+", OP_SUB = "-",
-         OP_MUL = "*", OP_DIV = "/";
-
    public static void main(String[] args) {
       try (Scanner sc = new Scanner(System.in)) {
          System.out.print("Enter first number: ");
          double n1 = sc.nextDouble();
-   
+
          System.out.print("Enter second number: ");
          double n2 = sc.nextDouble();
-   
+
          System.out.print("Enter your operation: ");
-         String op = sc.next();
-   
-         Calculator calc = new Calculator();
-         double result = 0;
-         
-         switch (op) {
-            case OP_ADD:
-               result = calc.add(n1, n2);
-               break;
-            case OP_SUB:
-               result = calc.sub(n1, n2);
-               break;
-            case OP_MUL:
-               result = calc.mul(n1, n2);
-               break;
-            case OP_DIV:
-               result = calc.div(n1, n2);
-               break;
-            default:
-               System.out.println("Sorry, I don't support that operation :(");
-               System.exit(1);
-         }
-         
+         String symbol = sc.next();
+
          System.out.println();
-         System.out.println("Your answer is " + result);
+         try {
+            BinaryOperator op = Parser.getOperator(symbol);
+            System.out.println("Your answer is " + op.apply(n1, n2));
+         } catch (IllegalArgumentException e) {
+            System.out.println("Sorry, I don't know that operation :(");
+            System.exit(1);
+         }
       }
    }
 }
