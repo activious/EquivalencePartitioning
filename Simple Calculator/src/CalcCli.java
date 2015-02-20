@@ -37,7 +37,7 @@ public class CalcCli {
             System.out.println("Sorry, I don't know that operation :(");
             System.exit(1);
          } catch (InvalidOperandException e) {
-            System.out.println("Ups! " + e.getMessage());
+            System.out.println("Oops! " + e.getMessage());
             System.exit(2);
          }
       }
