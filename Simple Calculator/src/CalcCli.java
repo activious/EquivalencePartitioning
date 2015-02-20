@@ -18,13 +18,13 @@ public class CalcCli {
 
    public static void main(String[] args) {
       try (Scanner sc = new Scanner(System.in)) {
-         System.out.println("Enter first number");
+         System.out.print("Enter first number: ");
          double n1 = sc.nextDouble();
    
-         System.out.println("Enter second number");
+         System.out.print("Enter second number: ");
          double n2 = sc.nextDouble();
    
-         System.out.println("Enter your operation");
+         System.out.print("Enter your operation: ");
          String op = sc.next();
    
          Calculator calc = new Calculator();
@@ -48,6 +48,7 @@ public class CalcCli {
                System.exit(1);
          }
          
+         System.out.println();
          System.out.println("Your answer is " + result);
       }
    }
