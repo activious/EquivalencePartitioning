@@ -1,5 +1,11 @@
 import java.util.Scanner;
 
+import parser.Parser;
+import parser.UnknownOperatorException;
+import calculator.BinaryOperator;
+import calculator.Calculator;
+import calculator.InvalidOperandException;
+
 /**
  * Command line interface for a basic calculator.
  * 

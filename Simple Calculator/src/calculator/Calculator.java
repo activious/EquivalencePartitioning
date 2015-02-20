@@ -1,3 +1,4 @@
+package calculator;
 /**
  * Calculator for basic math operations on floating point numbers.
  * 
