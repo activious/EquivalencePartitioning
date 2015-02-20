@@ -27,9 +27,12 @@ public class CalcCli {
          try {
             BinaryOperator op = Parser.getOperator(symbol);
             System.out.println("Your answer is " + op.apply(n1, n2));
-         } catch (IllegalArgumentException e) {
+         } catch (UnknownOperatorException e) {
             System.out.println("Sorry, I don't know that operation :(");
             System.exit(1);
+         } catch (InvalidOperandException e) {
+            System.out.println("Ups! " + e.getMessage());
+            System.exit(2);
          }
       }
    }

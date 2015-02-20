@@ -2,7 +2,7 @@ public class Parser {
    private static final String SYM_ADD = "+", SYM_SUB = "-", SYM_MUL = "*",
          SYM_DIV = "/";
 
-   public static BinaryOperator getOperator(String symbol) {
+   public static BinaryOperator getOperator(String symbol) throws UnknownOperatorException {
       switch (symbol) {
          case SYM_ADD:
             return Calculator.getAdder();
@@ -13,7 +13,7 @@ public class Parser {
          case SYM_DIV:
             return Calculator.getDivider();
          default:
-            throw new IllegalArgumentException("Unknown operator: " + symbol);
+            throw new UnknownOperatorException("Unknown operator: " + symbol);
       }
    }
 }
